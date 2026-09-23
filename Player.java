@@ -12,7 +12,7 @@ public class Player {
             balance += risk;
         else balance -= risk;
 
-    Player squeezycheeks = new PLayer(100);
+    Player squeezycheeks = new Player(100);
     squeezycheeks.flip(penny, "tails", 50)
     System.out.println(squeezycheeks.getBalance());
     }
