@@ -11,9 +11,5 @@ public class Player {
         if (c.getState().equals(guess))
             balance += risk;
         else balance -= risk;
-
-    Player squeezycheeks = new Player(100);
-    squeezycheeks.flip(penny, "tails", 50)
-    System.out.println(squeezycheeks.getBalance());
     }
 }

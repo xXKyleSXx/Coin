@@ -20,5 +20,11 @@ public class Main {
         nickel.flip(1000);
         System.out.println(nickel.getHeads());
         System.out.println(nickel.getTails());
+
+    Player squeezycheeks = new Player(100);
+    squeezycheeks.flip(penny, "tails", 50);
+    System.out.println(squeezycheeks.getBalance());
+
+    System.out.println ("Heads" + h)
     }
 }
