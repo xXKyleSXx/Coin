@@ -8,22 +8,17 @@ public class Main {
         System.out.println(penny.getState());
         System.out.println(penny.getHeads());
         System.out.println(penny.getTails());
+        penny.flip(99);
+        System.out.println(penny.getHeads());
+        System.out.println(penny.getTails());
 
-    public void flip() {
-        if (Math.random() < 0.5) {
-            state = "tails";
-            tails++;
-        }
-        else {
-            state = "heads";
-            heads++
-        }
-    }
-    public void flip(int flips) {
-        while (flips > 0) {
-            flip();
-            flips--;
-        }
-    }
+        Coin nickel = new Coin(.9);
+        nickel.flip(100);
+        System.out.println(nickel.getHeads());
+        System.out.println(nickel.getTails());
+        nickel.setPTails(.5);
+        nickel.flip(1000);
+        System.out.println(nickel.getHeads());
+        System.out.println(nickel.getTails());
     }
 }
