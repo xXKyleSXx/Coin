@@ -26,6 +26,7 @@ public class Main {
             else
                 tails++;
         }
+        //The part where we flip 97 coins
         System.out.println("Heads: " + heads);
         System.out.println("Tails: " + tails);
         System.out.println(heads + tails);
@@ -34,10 +35,22 @@ public class Main {
         System.out.println(se);
         double pHat = (double) tails / (heads + tails);
         System.out.println(pHat);
+        System.out.println(2 * pHat - 1);
         double z = (pHat - .5) / se;
         System.out.println(z);
+        //The other mystery player who flips a totally not rigged coin
+        System.out.println(simulate(97, "tails", pHat, 2 * pHat - 1));
     }
     public static double standardError(double p, int sample) {
         return Math.sqrt (p * (1 - p) / sample);
+    }
+    public static int simulate(int flips, String guess, double tails, double risk) {
+        Player p = new Player(100);
+        Coin c = new Coin(tails);
+        while (flips > 0) {
+            p.flip(c, guess, (int)(risk * p.getBalance() + 0.5));
+            flips--;
+        }
+        return p.getBalance();
     }
 }
