@@ -26,12 +26,13 @@ public class Main {
             else
                 tails++;
         }
-        //The part where we flip 97 coins
-        System.out.println("Heads: " + heads);
-        System.out.println("Tails: " + tails);
-        System.out.println(heads + tails);
+        //The part where we flip 97 coins from the txt
+        //System.out.println("Heads: " + heads);
+        //System.out.println("Tails: " + tails);
+        //System.out.println(heads + tails);
         s.close();
         double se = standardError(.5, 97);
+        System.out.println("Special numbers inbound");
         System.out.println(se);
         double pHat = (double) tails / (heads + tails);
         System.out.println(pHat);
