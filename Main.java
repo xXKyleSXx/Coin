@@ -19,8 +19,6 @@ public class Main {
         Scanner s = new Scanner(file);
         int heads = 0;
         int tails = 0;
-        
-        double se = standardError(.5,);
 
         while (s.hasNext()) {
             if (s.next().equals("heads"))
@@ -32,6 +30,12 @@ public class Main {
         System.out.println("Tails: " + tails);
         System.out.println(heads + tails);
         s.close();
+        double se = standardError(.5, 97);
+        System.out.println(se);
+        double pHat = (double) tails / (heads + tails);
+        System.out.println(pHat);
+        double z = (pHat - .5) / se;
+        System.out.println(z);
     }
     public static double standardError(double p, int sample) {
         return Math.sqrt (p * (1 - p) / sample);
